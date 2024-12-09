@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "vite.config.ts",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "http://ec2-18-198-208-73.eu-central-1.compute.amazonaws.com/api"
+    }
+  ],
+  "outputDirectory": "dist"
+}
