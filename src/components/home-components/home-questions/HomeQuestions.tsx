@@ -98,9 +98,11 @@ const HomeQuestions: FC<{
       {questions?.length !== undefined && questions.length > 0 ? (
         <div className="flex flex-col gap-y-5 rounded-xl bg-gray-100 p-5">
           {questions?.map((question: QuestionData) => (
-            <div onClick={() => handleGoNextPage(question.id)}>
+            <div
+              key={question.id}
+              onClick={() => handleGoNextPage(question.id)}
+            >
               <Question
-                key={question.id}
                 data={{
                   id: question.id,
                   title: question.title || '',
