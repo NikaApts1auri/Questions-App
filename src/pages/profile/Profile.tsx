@@ -4,6 +4,7 @@ import ProfileDetails from './ProfileDetails';
 import ProfileEditForm from './ProfileEditForm';
 import { updateUserProfile } from '@/api/requests/updateUserProfile';
 import { useLogout } from '@/api/hooks/useLogout';
+//
 
 export default function Profile() {
   const [username, setUsername] = useState<string | null>(null);
