@@ -3,6 +3,7 @@ import { useEffect, useState, ChangeEvent } from 'react';
 import ProfileDetails from './ProfileDetails';
 import ProfileEditForm from './ProfileEditForm';
 import { updateUserProfile } from '@/api/requests/updateUserProfile';
+import { useLogout } from '@/api/hooks/useLogout';
 
 export default function Profile() {
   const [username, setUsername] = useState<string | null>(null);
@@ -23,6 +24,8 @@ export default function Profile() {
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
 
   const [editing, setEditing] = useState<boolean>(false);
+
+  const { handleLogout } = useLogout();
 
   useEffect(() => {
     const getUserData = async () => {
@@ -83,6 +86,22 @@ export default function Profile() {
           username={username}
           email={email}
         />
+
+        <div className="py-4 lg:hidden">
+          <div className="border-b border-gray-300 py-4">
+            <button
+              className="flex items-center text-gray-500 transition-colors duration-300 hover:text-red-500"
+              onClick={handleLogout}
+            >
+              <img
+                src="/icons/logout.svg"
+                alt="Log Out Icon"
+                className="h-5 w-5 md:h-6 md:w-6"
+              />
+              <span className="ml-2 text-sm md:text-base">Log Out</span>
+            </button>
+          </div>
+        </div>
 
         {editing ? (
           <ProfileEditForm
