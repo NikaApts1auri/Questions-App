@@ -90,7 +90,7 @@ export default function Profile() {
         <div className="py-4 lg:hidden">
           <div className="border-b border-gray-300 py-4">
             <button
-              className="flex items-center text-gray-500 transition-colors duration-300 hover:text-red-500"
+              className="flex items-center text-gray-500 transition-colors duration-300"
               onClick={handleLogout}
             >
               <img
