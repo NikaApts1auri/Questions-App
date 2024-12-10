@@ -58,7 +58,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
             {reputation !== null ? reputation : 'Loading...'}
           </span>
         </div>
-        <div className="flex justify-between border-b border-gray-300 py-6 text-gray-700">
+        <div className="flex justify-between border-b border-gray-300 pb-6 text-gray-700">
           <span className="text-lg text-gray-400 md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
             Answered Questions
           </span>

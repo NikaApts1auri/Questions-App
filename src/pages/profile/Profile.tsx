@@ -87,8 +87,8 @@ export default function Profile() {
           email={email}
         />
 
-        <div className="py-4 lg:hidden">
-          <div className="border-b border-gray-300 py-4">
+        <div className="lg:hidden">
+          <div className="border-b border-gray-300 py-6">
             <button
               className="flex items-center text-gray-500 transition-colors duration-300"
               onClick={handleLogout}
