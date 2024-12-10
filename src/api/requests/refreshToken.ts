@@ -10,6 +10,10 @@ export const refreshToken = async (refreshToken: string): Promise<RefreshTokenRe
   try {
     const response = await axios.post(`${baseURL}/token/refresh/`, {
       refresh: refreshToken,
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
     return response.data;
   } catch (error) {
